@@ -149,18 +149,6 @@ fi
 sudo apt --fix-broken install -y
 sudo apt autoremove -y
 
-header "Configure gnome desktop"
-# dark mode
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-
-# key repeat settings
-gsettings set org.gnome.desktop.peripherals.keyboard delay 250
-
-
-header "Configure gnome shell"
-# dock smaller
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
-
 header "Install zsh"
 if ! command -v zsh --version &> /dev/null
 then
@@ -173,7 +161,6 @@ else
     echo "zsh already installed"
 fi
 
-# update zsh
 header "Update zsh"
 cd .oh-my-zsh
 omz update
@@ -193,7 +180,6 @@ do
 done
 
 header "Install zsh plugins"
-# zsh syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -207,11 +193,49 @@ vim +'PlugInstall --sync' +qa
 header "Configure vim plugins"
 cd ~/.config/nvim/plugged/youcompleteme && python3 install.py --all
 
-
 header "Install fonts (will take some time)"
 sudo apt install -y fonts-firacode
 cd ~/Downloads && git clone https://github.com/ryanoasis/nerd-fonts && ~/Downloads/nerd-fonts/install.sh
 TODOS+=("Set Gnome terminal font into: FiraCode Nerd Font Mono Regular");
+
+header "Configure gnome"
+
+# default dark mode theme to fallback
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+# install dracula theme
+WANTED_THEME='Dracula'
+
+CURRENT_GTK_THEME=gsettings get org.gnome.desktop.interface gtk-theme "Dracula"
+if [ $CURRENT_GTK_THEME != WANTED_THEME ]; then
+    cd ~/.themes/                                                 && \
+    curl -sS https://github.com/dracula/gtk/archive/master.zip > file.zip && \
+    unzip file.zip                                                        && \
+    rm file.zip
+
+    gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+    gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+else
+  echo "Dracula gtk theme already installed"
+fi
+
+CURRENT_ICON_THEME=gsettings get org.gnome.desktop.interface icon-theme "Dracula"
+if [ $CURRENT_ICON_THEME != WANTED_THEME ]; then
+    cd ~/.icons/                                                        && \
+    curl -sS https://github.com/dracula/gtk/files/5214870/Dracula.zip > file.zip && \
+    unzip file.zip                                                               && \
+    rm file.zip
+
+    gsettings set org.gnome.desktop.interface icon-theme "Dracula"
+else
+  echo "Dracula icon theme already installed"
+fi
+
+# key repeat settings
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250
+
+# dock smaller
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
 
 header "Check for updates"
 sudo apt update -y
@@ -241,3 +265,4 @@ done
 
 header "Refreshing shell..."
 exec zsh
+
