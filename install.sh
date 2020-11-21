@@ -49,6 +49,7 @@ sudo ubuntu-drivers autoinstall
 
 header "Setup folders"
 mkdir ~/.themes
+mkdir ~/.icons
 mkdir -p ~/Development/HetWebbureau
 mkdir -p ~/Development/RTL/RTL
 mkdir -p ~/Development/RTL/Videoland
@@ -206,25 +207,28 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 # install dracula theme
 WANTED_THEME='Dracula'
 
-CURRENT_GTK_THEME=gsettings get org.gnome.desktop.interface gtk-theme "Dracula"
+CURRENT_GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
 if [ $CURRENT_GTK_THEME != WANTED_THEME ]; then
-    cd ~/.themes/                                                 && \
-    curl -sS https://github.com/dracula/gtk/archive/master.zip > file.zip && \
-    unzip file.zip                                                        && \
-    rm file.zip
+    wget  -P ~/.themes/ "https://github.com/dracula/gtk/archive/master.zip"
+    cd ~/.themes
+    unzip master
+    rm master
+    mv ./gtk-master ./Dracula
+
 
     gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
     gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 else
-  echo "Dracula gtk theme already installed"
+    echo "Dracula gtk theme already installed"
 fi
 
-CURRENT_ICON_THEME=gsettings get org.gnome.desktop.interface icon-theme "Dracula"
+CURRENT_ICON_THEME=$(gsettings get org.gnome.desktop.interface icon-theme)
 if [ $CURRENT_ICON_THEME != WANTED_THEME ]; then
-    cd ~/.icons/                                                        && \
-    curl -sS https://github.com/dracula/gtk/files/5214870/Dracula.zip > file.zip && \
-    unzip file.zip                                                               && \
-    rm file.zip
+    cd ~/.icons/
+    wget  -P ~/.icons/ "https://github.com/dracula/gtk/files/5214870/Dracula.zip"
+    unzip *
+    rm *.zip
+    TODOS+=("Remove downloaded icons file in ~/.icons");
 
     gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 else
@@ -236,6 +240,15 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 
 # dock smaller
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
+
+# auto hide dock
+gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
+
+# default list view
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+
+# set wallpaper
+gsettings set org.gnome.desktop.background picture-uri file:////home/picard/Development/HetWebbureau/dotfiles/wallpaper.jpg
 
 header "Check for updates"
 sudo apt update -y
