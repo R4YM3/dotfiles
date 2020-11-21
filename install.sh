@@ -1,12 +1,59 @@
-# install:
+#!/bin/bash
+
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+RESET=`tput sgr0`
+
+TODOS=()
+
+function header {
+    echo
+    echo ==============================
+    echo
+    echo "${GREEN}$1${RESET}"
+    echo
+    echo ==============================
+    echo
+}
+
+echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    clear
+    echo
+    echo "Starting install..."
+else
+    echo "Your are not connected to the internet, retry when connected.."
+    exit 1
+fi
+
+echo
+echo "User password required to install packages"
+sudo -v
+
+
+header "Download fresh copy of dotfiles and saving it in ~/Development/HetWebbureau"
+PWD=pwd
+cd ~/Development/HetWebbureau/
+git clone https://github.com/R4YM3/dotfiles.git
+cd ./dotfiles && git pull
+TODOS+=("Remove this folder $PWD, you can find a fresh copy in ~/Development/HetWebbureau");
+
+header "Check for updates"
 sudo apt update
-sudo apt-get install build-essential libssl-dev git curl cmake python3-dev make
 
-# drivers
+header "Install build-essentials"
+sudo apt-get install -y build-essential libssl-dev git curl cmake python3-dev make
+
+header "Install drivers"
 sudo ubuntu-drivers autoinstall
-drivers ethernet drivers
 
-# applications
+header "Setup folders"
+mkdir ~/.themes
+mkdir -p ~/Development/HetWebbureau
+mkdir -p ~/Development/RTL/RTL
+mkdir -p ~/Development/RTL/Videoland
+
+header "Install applications"
 sudo apt install -y snapd
 sudo snap install chromium
 sudo snap install opera
@@ -27,26 +74,44 @@ sudo snap install icloud-for-linux
 
 sudo apt-get install -y virtualbox
 
-wget -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb
-rm -rf ~/Downloads/google-chrome-stable_current_amd64.deb
+sudo apt install -y gnome-tweak-tool
+TODOS+=("configure CAPS to ESCAPE");
 
+if ! command -v google-chrome --version &> /dev/null
+then
+    wget -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo apt install -y ~/Downloads/google-chrome-stable_current_amd64.deb
+    rm -rf ~/Downloads/google-chrome-stable_current_amd64.deb
+else
+    echo "Google chrome already installed"
+fi
 
-# languages
+header "Install programming languages"
 sudo snap install go --classic
 sudo apt install -y default-jdk
 sudo apt install -y nodejs
 
-# install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+header "Install nvm"
+if ! command -v google-chrome --version &> /dev/null
+then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+else
+    echo "nvm already installed"
+fi
 
-sudo apt-get install npm
-npm config set prefix ~/.config/npm
-export NPM_CONFIG_PREFIX=~/.config/npm
-export PATH=$PATH:~/.config/npm/bin
-echo -e "export NPM_CONFIG_PREFIX=~/.config/npm\nexport PATH=\$PATH:~/.config/npm/bin" >> ~/.bashrc
+header "Install and config npm"
+if ! command -v npm --version &> /dev/null
+then
+    sudo apt-get install -y npm
+    npm config set prefix ~/.config/npm
+    export NPM_CONFIG_PREFIX=~/.config/npm
+    export PATH=$PATH:~/.config/npm/bin
+    echo -e "export NPM_CONFIG_PREFIX=~/.config/npm\nexport PATH=\$PATH:~/.config/npm/bin" >> ~/.bashrc
+else
+    echo "npm already installed"
+fi
 
-# cli
+header "Install CLI programs"
 sudo snap install glow
 sudo snap install slack-term
 sudo snap install gotop
@@ -61,88 +126,118 @@ sudo apt-get install -y tmux
 sudo apt-get install -y awscli
 sudo apt-get install -y mono-xbuild
 
-# to remap caps lock into esc
-sudo apt install gnome-tweak-tool
+if ! command -v docker &> /dev/null
+then
+    header "Install docker"
+    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    apt-cache policy docker-ce
+    sudo apt install -y docker-ce
+else
+    echo "docker already installed"
+fi
 
-# docker
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-apt-cache policy docker-ce
-sudo apt install -y docker-ce
+header "Install global npm packages"
+if ! command -v nodemon --version &> /dev/null
+then
+    npm install -g nodemon
+else
+    echo "docker already installed"
+fi
 
-# global packages
-npm install -g nodemon
-npm install -g trash
+sudo apt --fix-broken install -y
+sudo apt autoremove -y
 
-# linux behaviour
+header "Configure gnome desktop"
+# dark mode
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
 # key repeat settings
 gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 
-# caps as escape
-setxkbmap -option caps:swapescape
 
-# setup folders
-mkdir ~/.config
-mkdir ~/.themes
-mkdir -p ~/Development/HetWebbureau
-mkdir -p ~/Development/RTL/RTL
-mkdir -p ~/Development/RTL/Videoland
+header "Configure gnome shell"
+# dock smaller
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 16
 
-# install zsh
-sudo apt install -y zsh
-sudo apt-get install -y powerline fonts-powerline
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-
-# enable zsh
-chsh -s /bin/zsh
-exec zsh
+header "Install zsh"
+if ! command -v zsh --version &> /dev/null
+then
+    rm -rf ~/.oh-my-zsh
+    sudo apt install -y zsh
+    sudo apt-get install -y powerline fonts-powerline
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+else
+    echo "zsh already installed"
+fi
 
 # update zsh
+header "Update zsh"
 cd .oh-my-zsh
 omz update
 
-# zsh syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting --depth 1
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+header "Install dotfiles"
+rm ~/.zshrc
 
-# install dotfiles
+cd ~/Development/HetWebbureau/dotfiles-master
 CPATH="$(pwd)/dotfiles"
-DOTFILES=($(cd ./dotfiles && ls -A | egrep '^\.')) # parentheses are required
+DOTFILES=$(cd ./dotfiles && ls -A | egrep '^\.')
 
-for FILE in "${DOTFILES[@]}"
+for FILE in $DOTFILES
 do
   rm -rf ~/$FILE
   ln -s $CPATH/$FILE ~/$FILE
   echo "created symlink ~/$FILE refers to $CPATH/$FILE"
 done
 
-exec zsh
+header "Install zsh plugins"
+# zsh syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting --depth 1
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# install plug, vim package manager
+header "(re-)install plug (Vim package manager)"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# install vim packages
-nvim +PluginInstall +qall
+header "Install Vim plugins"
+vim +'PlugInstall --sync' +qa
 
-# install font
-sudo apt install -y fonts-firacode
-cd ~/Downloads && git clone https://github.com/ryanoasis/nerd-fonts && ~/Downloads/nerd-fonts/install.sh
-
-# config color schemes
-cp -r ~/.config/nvim/plugged/vim-colors-solarized ~/.config/nvim/colors/
-
-# config youcompleteme
+header "Configure vim plugins"
 cd ~/.config/nvim/plugged/youcompleteme && python3 install.py --all
 
-# check for updates
-sudo apt update
+
+header "Install fonts (will take some time)"
+sudo apt install -y fonts-firacode
+cd ~/Downloads && git clone https://github.com/ryanoasis/nerd-fonts && ~/Downloads/nerd-fonts/install.sh
+TODOS+=("Set Gnome terminal font into: FiraCode Nerd Font Mono Regular");
+
+header "Check for updates"
+sudo apt update -y
 sudo snap refresh
 
-# install terminal dracula theme
-sudo apt-get install -f dconf-cli
+header "Remove dependecies not required anymore"
+sudo apt autoremove
+
+header "initiate gnome terminal dracula theme install"
+sudo apt-get install -y -f dconf-cli
 mkdir ~/.config/terminal-themes
 cd ~/.config/terminal-themes && git clone https://github.com/dracula/gnome-terminal && cd gnome-terminal && ./install.sh
+TODOS+=("Activate dracula theme in gnome terminal");
+
+cd $PWD # back where we started
+
+header "Install finished";
+
+echo
+echo " You stil have TODO manually:"
+echo
+
+for TODO in "${TODOS[@]}"
+do
+    echo - $TODO.
+done
+
+header "Refreshing shell..."
+exec zsh
