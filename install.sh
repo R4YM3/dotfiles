@@ -83,6 +83,10 @@ then
     wget -P ~/Downloads https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo apt install -y ~/Downloads/google-chrome-stable_current_amd64.deb
     rm -rf ~/Downloads/google-chrome-stable_current_amd64.deb
+
+    sudo apt install chrome-gnome-shell
+
+    TODOS+=("Enable sync in Google Chrome");
 else
     echo "Google chrome already installed"
 fi
@@ -107,7 +111,7 @@ then
     npm config set prefix ~/.config/npm
     export NPM_CONFIG_PREFIX=~/.config/npm
     export PATH=$PATH:~/.config/npm/bin
-    echo -e "export NPM_CONFIG_PREFIX=~/.config/npm\nexport PATH=\$PATH:~/.config/npm/bin" >> ~/.bashrc
+    echo -e "export NPM_CONFIG_PREFIX=~/.config/npm\nexport PATH=\$PATH:~/.config/npm/bin" >> ~/.zshrc
 else
     echo "npm already installed"
 fi
@@ -124,8 +128,10 @@ sudo apt-get install -y git-crypt
 sudo apt-get install -y lynx
 sudo apt-get install -y neovim
 sudo apt-get install -y tmux
+sudo apt-get install -y tmuxinator
 sudo apt-get install -y awscli
 sudo apt-get install -y mono-xbuild
+sudo apt-get install -y openssh-server
 
 if ! command -v docker &> /dev/null
 then
@@ -145,6 +151,13 @@ then
     npm install -g nodemon
 else
     echo "docker already installed"
+fi
+
+if ! command -v tidal-cli --version &> /dev/null
+then
+    npm -g i tidal-cli-client@latest
+else
+    echo "tidal-cli already installed"
 fi
 
 sudo apt --fix-broken install -y
@@ -257,6 +270,29 @@ sudo snap refresh
 header "Remove dependecies not required anymore"
 sudo apt autoremove
 
+header "Setup git"
+username="Raymond Schweers"
+git config --global user.name $username
+echo "git user.name = $username"
+
+email="raymond@hetwebbureau.nl"
+git config --global user.email $email
+echo "git user.email = $email"
+
+# git ignore line endings, https://stackoverflow.com/questions/31653922/git-ignore-line-endings
+autocrlf=true
+git config --global core.autocrlf $autocrlf
+echo "git user.autocrlf = $autocrlf"
+
+header "Download github repositories"
+cd ~/Development/HetWebbureau/
+git clone https://github.com/R4YM3/react-cli.git
+
+header "Check for updates"
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
 header "initiate gnome terminal dracula theme install"
 sudo apt-get install -y -f dconf-cli
 mkdir ~/.config/terminal-themes
@@ -264,6 +300,8 @@ cd ~/.config/terminal-themes && git clone https://github.com/dracula/gnome-termi
 TODOS+=("Activate dracula theme in gnome terminal");
 
 cd $PWD # back where we started
+
+TODOS+=("Install dash to dock");
 
 header "Install finished";
 
@@ -275,6 +313,8 @@ for TODO in "${TODOS[@]}"
 do
     echo - $TODO.
 done
+
+google-chrome https://extensions.gnome.org/extension/307/dash-to-dock/
 
 header "Refreshing shell..."
 exec zsh
