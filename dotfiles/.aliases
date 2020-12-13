@@ -6,7 +6,7 @@ alias vi="nvim"
 # tmuxinator projects
 alias dotfiles='tmuxinator start dotfiles'
 alias rtl-account='tmuxinator start rtl-account'
-alias rtl-v1='tmuxinator start rtl-v1'
+alias vl_optimiser_nodejs='tmuxinator start vl_optimiser_nodejs'
 alias rtlxl-frontend='tmuxinator start rtlxl-frontend'
 alias rtlxl-frontend2='tmuxinator start rtlxl-frontend2'
 alias rtlxl-top-bar='tmuxinator start rtlxl-top-bar'

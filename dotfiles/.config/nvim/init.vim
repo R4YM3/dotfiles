@@ -75,7 +75,6 @@ Plug 'posva/vim-vue'                            " .vue support "
 Plug 'qpkorr/vim-bufkill'                       " nload, delete or wipe a buffer without closing the window or split "
 Plug 'valloric/youcompleteme'                   " fuzzy-search code completion engine "
 Plug 'w0rp/ale'                                 " linter "
-Plug 'zhaocai/GoldenView.Vim'                   " plits in goldenratio"
 Plug 'majutsushi/tagbar'                        " tagbar with definitions "
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'               " Typescript "
@@ -145,6 +144,7 @@ let g:prettier#autoformat = 0
 " every variable in different color
 "
 Plug 'jaxbot/semantic-highlight.vim'
+Plug 'roman/golden-ratio'
 
 call plug#end()
 

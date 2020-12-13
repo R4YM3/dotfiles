@@ -108,10 +108,6 @@ header "Install and config npm"
 if ! command -v npm --version &> /dev/null
 then
     sudo apt-get install -y npm
-    npm config set prefix ~/.config/npm
-    export NPM_CONFIG_PREFIX=~/.config/npm
-    export PATH=$PATH:~/.config/npm/bin
-    echo -e "export NPM_CONFIG_PREFIX=~/.config/npm\nexport PATH=\$PATH:~/.config/npm/bin" >> ~/.zshrc
 else
     echo "npm already installed"
 fi
@@ -132,6 +128,8 @@ sudo apt-get install -y tmuxinator
 sudo apt-get install -y awscli
 sudo apt-get install -y mono-xbuild
 sudo apt-get install -y openssh-server
+sudo apt-get install -y openconnect
+sudo apt-get install -y ack-grep
 
 if ! command -v docker &> /dev/null
 then
@@ -249,6 +247,7 @@ else
 fi
 
 # key repeat settings
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30
 gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 
 # dock smaller
@@ -283,6 +282,8 @@ echo "git user.email = $email"
 autocrlf=true
 git config --global core.autocrlf $autocrlf
 echo "git user.autocrlf = $autocrlf"
+
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
 
 header "Download github repositories"
 cd ~/Development/HetWebbureau/
