@@ -4,6 +4,8 @@ RED=`tput setaf 1`
 GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 
+PWD=pwd
+
 TODOS=()
 
 function header {
@@ -16,36 +18,137 @@ function header {
     echo
 }
 
+# ask password upfront
+echo
+echo "User password required to install packages"
+sudo -v
+
+# test internet connection, if not found install ethernet drivers
 echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     clear
     echo
     echo "Starting install..."
 else
-    echo "Your are not connected to the internet, retry when connected.."
-    exit 1
+    echo
+    echo "No internet detected, installing ethernet drivers"
+
+    DRIVERS_ETHERNET_PATH = "${PWD}/drivers/ethernet"
+
+    echo "Installing driver dependecies"
+    sudo dpkg -i "$DRIVERS_ETHERNET_PATH/dependecies"
+
+    DRIVERS_ETHERNET_EXECUTABLE="$DRIVERS_ETHERNET_PATH/r8125-9.004.01/autorun.sh"
+    sudo chmod +x $DRIVERS_ETHERNET_EXECUTABLE
+    $DRIVERS_ETHERNET_EXECUTABLE
+
+    echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        clear
+        echo
+        echo "Connected to Internet."
+    else
+        echo
+        echo "ERROR: No internet detected"
+        exit 1
+    fi
 fi
 
-echo
-echo "User password required to install packages"
-sudo -v
-
-
-header "Download fresh copy of dotfiles and saving it in ~/Development/HetWebbureau"
-PWD=pwd
-cd ~/Development/HetWebbureau/
-git clone https://github.com/R4YM3/dotfiles.git
-cd ./dotfiles && git pull
-TODOS+=("Remove this folder $PWD, you can find a fresh copy in ~/Development/HetWebbureau");
-
+# update to latest version
 header "Check for updates"
-sudo apt update
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo apt update -y
 
 header "Install build-essentials"
 sudo apt-get install -y build-essential libssl-dev git curl cmake python3-dev make
 
 header "Install drivers"
 sudo ubuntu-drivers autoinstall
+
+# For GPU we need specific version
+header "Kernel"
+KERNEL_VERSION=$(uname -r)
+WANTED_KERNEL_VERSION="5.4.0-42-generic"
+if [ $KERNEL_VERSION != $WANTED_KERNEL_VERSION ]
+then
+    echo "Found kernel $KERNEL_VERSION wanted $WANTED_KERNEL_VERSION"
+
+    IMAGE="linux-image-${WANTED_KERNEL_VERSION}"
+    HEADERS="linux-headers-${WANTED_KERNEL_VERSION}"
+    MODULES_EXTRA="linux-modules-extra-${WANTED_KERNEL_VERSION}"
+
+    sudo apt install $IMAGE $HEADERS $MODULES_EXTRA
+
+    echo ""
+    echo "installed $WANTED_KERNEL_VERSION which is the latest supported kernel by amdgpu";
+    echo "please reboot into this kernel and re-run this script"
+
+    exit 1;
+fi
+
+# tests GPU, when required install GPU drivers
+
+if ! command -v amdgpu-uninstall --help &> /dev/null
+header "GPU"
+then
+    echo "Please install GPU drivers"
+
+    echo "please go to: https://www.amd.com/en/support/graphics/amd-radeon-6000-series/amd-radeon-6900-series/amd-radeon-rx-6900-xt"
+    echo "Download drivers, unpack and run"
+    echo "sudo ./amdgpu-install -y"
+
+    exit 1;
+
+    : '
+        PWD=$(pwd)
+
+        DIR="$PWD/Development/HetWebbureau/dotfiles"
+
+        DRIVERS_GPU_PATH="$DIR/drivers/gpu"
+
+        DRIVERS_ETHERNET_TARBALL="$DRIVERS_GPU_PATH/amdgpu-pro-20.45-1164792-ubuntu-20.04.tar.xz"
+        echo $DRIVERS_ETHERNET_TARBALL
+
+        #cd $($PWD) && sudo tar -zxvf "./amdgpu-pro-19.45-1164792-ubuntu-20.04.tar.xz"
+        # run sudo ./amdgpu-install -y
+    '
+else
+    echo "GPU drivers are installed"
+fi
+
+# Install and config git, we need this when installing dotfiles
+header "git"
+if ! command -v git help &> /dev/null
+then
+    sudo apt install git-all -y
+else
+    echo "git already installed"
+fi
+
+header "Set config git"
+GIT_USERNAME="Raymond Schweers"
+GIT_EMAIL="raymond@hetwebbureau.nl"
+GIT_CRLF="input"
+
+header "Setup git"
+git config --global user.name $GIT_USERNAME
+echo "git user.name = $GIT_USERNAME"
+
+git config --global user.email $GIT_EMAIL
+echo "git user.email = $GIT_EMAIL"
+
+# required to fix line endings in dependecies
+git config --global core.autocrlf $GIT_CRLF
+echo "git user.autocrlf = $GIT_CRLF"
+
+# get last version of dotfiles
+header "Download fresh copy of dotfiles and saving it in ~/Development/HetWebbureau"
+cd ~/Development/HetWebbureau/
+git clone https://github.com/R4YM3/dotfiles.git
+cd ./dotfiles && git pull
+TODOS+=("Remove this folder $PWD, you can find a fresh copy in ~/Development/HetWebbureau");
 
 header "Setup folders"
 mkdir ~/.themes
@@ -174,7 +277,7 @@ else
 fi
 
 header "Update zsh"
-cd .oh-my-zsh
+cd ~/.oh-my-zsh
 omz update
 
 header "Install dotfiles"
@@ -269,36 +372,22 @@ sudo snap refresh
 header "Remove dependecies not required anymore"
 sudo apt autoremove
 
-header "Setup git"
-username="Raymond Schweers"
-git config --global user.name $username
-echo "git user.name = $username"
-
-email="raymond@hetwebbureau.nl"
-git config --global user.email $email
-echo "git user.email = $email"
-
-# git ignore line endings, https://stackoverflow.com/questions/31653922/git-ignore-line-endings
-autocrlf=true
-git config --global core.autocrlf $autocrlf
-echo "git user.autocrlf = $autocrlf"
-
 # curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
 
 header "Download github repositories"
 cd ~/Development/HetWebbureau/
 git clone https://github.com/R4YM3/react-cli.git
 
-header "Check for updates"
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
-
 header "initiate gnome terminal dracula theme install"
 sudo apt-get install -y -f dconf-cli
 mkdir ~/.config/terminal-themes
 cd ~/.config/terminal-themes && git clone https://github.com/dracula/gnome-terminal && cd gnome-terminal && ./install.sh
 TODOS+=("Activate dracula theme in gnome terminal");
+
+header "Check for updates"
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
 
 cd $PWD # back where we started
 
@@ -319,4 +408,3 @@ google-chrome https://extensions.gnome.org/extension/307/dash-to-dock/
 
 header "Refreshing shell..."
 exec zsh
-

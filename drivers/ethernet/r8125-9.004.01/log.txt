@@ -1,0 +1,368 @@
+-------------------------------
+za 21 nov 2020 11:09:05 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+za 21 nov 2020 11:09:25 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+za 21 nov 2020 11:09:41 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-42-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+za 21 nov 2020 17:04:53 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-54-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+za 21 nov 2020 17:05:41 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-54-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+za 21 nov 2020 17:06:29 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-54-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-54-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-54-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-54-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+Thu 03 Dec 2020 10:15:21 AM CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-56-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-56-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-56-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-56-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-56-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-56-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-56-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-56-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-56-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+Thu 03 Dec 2020 10:16:57 AM CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-56-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-56-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-56-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-56-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-56-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-56-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-56-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-56-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-56-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-56-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+Tue 15 Dec 2020 10:29:26 AM CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+Tue 15 Dec 2020 10:29:38 AM CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-58-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+di 15 dec 2020 23:11:36 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-42-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-42-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-42-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-42-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+-------------------------------
+di 15 dec 2020 21:43:23 CET
+make -C src/ clean
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src clean
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  CLEAN   /home/picard/Downloads/r8125-9.004.01/src/Module.symvers
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ modules
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src modules
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125_n.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtl_eeprom.o
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/rtltool.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.mod.o
+  LD [M]  /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C src/ install
+make[1]: Entering directory '/home/picard/Downloads/r8125-9.004.01/src'
+make -C /lib/modules/5.4.0-58-generic/build M=/home/picard/Downloads/r8125-9.004.01/src INSTALL_MOD_DIR=kernel/drivers/net/ethernet/realtek modules_install
+make[2]: Entering directory '/usr/src/linux-headers-5.4.0-58-generic'
+  INSTALL /home/picard/Downloads/r8125-9.004.01/src/r8125.ko
+  DEPMOD  5.4.0-58-generic
+make[2]: Leaving directory '/usr/src/linux-headers-5.4.0-58-generic'
+make[1]: Leaving directory '/home/picard/Downloads/r8125-9.004.01/src'
