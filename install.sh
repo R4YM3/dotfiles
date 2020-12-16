@@ -94,26 +94,7 @@ if ! command -v amdgpu-uninstall --help &> /dev/null
 header "GPU"
 then
     echo "Please install GPU drivers"
-
-    echo "please go to: https://www.amd.com/en/support/graphics/amd-radeon-6000-series/amd-radeon-6900-series/amd-radeon-rx-6900-xt"
-    echo "Download drivers, unpack and run"
-    echo "sudo ./amdgpu-install -y"
-
-    exit 1;
-
-    : '
-        PWD=$(pwd)
-
-        DIR="$PWD/Development/HetWebbureau/dotfiles"
-
-        DRIVERS_GPU_PATH="$DIR/drivers/gpu"
-
-        DRIVERS_ETHERNET_TARBALL="$DRIVERS_GPU_PATH/amdgpu-pro-20.45-1164792-ubuntu-20.04.tar.xz"
-        echo $DRIVERS_ETHERNET_TARBALL
-
-        #cd $($PWD) && sudo tar -zxvf "./amdgpu-pro-19.45-1164792-ubuntu-20.04.tar.xz"
-        # run sudo ./amdgpu-install -y
-    '
+    TODOS+=("Install GPU drivers, download it from please go to: https://www.amd.com/en/support/graphics/amd-radeon-6000-series/amd-radeon-6900-series/amd-radeon-rx-6900-xt. Download drivers, unpack and run it with sudo ./amdgpu-install -y");
 else
     echo "GPU drivers are installed"
 fi
