@@ -86,15 +86,16 @@ then
     echo "please reboot into this kernel and re-run this script"
 
     exit 1;
+else
+    TODOS+=("Remove other kernels");
 fi
 
 # tests GPU, when required install GPU drivers
-
 if ! command -v amdgpu-uninstall --help &> /dev/null
 header "GPU"
 then
     echo "Please install GPU drivers"
-    TODOS+=("Install GPU drivers, download it from please go to: https://www.amd.com/en/support/graphics/amd-radeon-6000-series/amd-radeon-6900-series/amd-radeon-rx-6900-xt. Download drivers, unpack and run it with sudo ./amdgpu-install -y");
+    TODOS+=("Install GPU drivers, download it from please go to: https://www.amd.com/en/support/graphics/. Download drivers, unpack and run it with sudo ./amdgpu-install -y");
 else
     echo "GPU drivers are installed"
 fi
