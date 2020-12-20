@@ -30,17 +30,14 @@ if [ $? -eq 0 ]; then
     echo
     echo "Starting install..."
 else
-    echo
-    echo "No internet detected, installing ethernet drivers"
-
-    DRIVERS_ETHERNET_PATH = "${PWD}/drivers/ethernet"
+    header "No internet detected, installing ethernet drivers"
 
     echo "Installing driver dependecies"
-    sudo dpkg -i "$DRIVERS_ETHERNET_PATH/dependecies"
+    sudo dpkg -i ./drivers/ethernet/dependecies/*
 
-    DRIVERS_ETHERNET_EXECUTABLE="$DRIVERS_ETHERNET_PATH/r8125-9.004.01/autorun.sh"
-    sudo chmod +x $DRIVERS_ETHERNET_EXECUTABLE
-    $DRIVERS_ETHERNET_EXECUTABLE
+
+    sudo chmod +x ./drivers/ethernet/r8125-9.004.01/autorun.sh
+    cd ./drivers/ethernet/r8125-9.004.01/ && sudo ./autorun.sh
 
     echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
     if [ $? -eq 0 ]; then
@@ -53,6 +50,8 @@ else
         exit 1
     fi
 fi
+
+sudo apt --fix-broken install
 
 # update to latest version
 header "Check for updates"
@@ -87,7 +86,8 @@ then
 
     exit 1;
 else
-    TODOS+=("Remove other kernels");
+    sudo apt remove linux-image-5.4.0-58-generic linux-image-unsigned-5.4.0-58-generic
+    audo apt autoremove
 fi
 
 # tests GPU, when required install GPU drivers
@@ -102,12 +102,7 @@ fi
 
 # Install and config git, we need this when installing dotfiles
 header "git"
-if ! command -v git help &> /dev/null
-then
-    sudo apt install git-all -y
-else
-    echo "git already installed"
-fi
+sudo apt install git-all -y
 
 header "Set config git"
 GIT_USERNAME="Raymond Schweers"
@@ -180,14 +175,10 @@ header "Install programming languages"
 sudo snap install go --classic
 sudo apt install -y default-jdk
 sudo apt install -y nodejs
+sudo apt-get install python3-pip
 
 header "Install nvm"
-if ! command -v google-chrome --version &> /dev/null
-then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
-else
-    echo "nvm already installed"
-fi
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
 
 header "Install and config npm"
 if ! command -v npm --version &> /dev/null
@@ -229,22 +220,13 @@ else
 fi
 
 header "Install global npm packages"
+# HAS ERROR INITAL INSTALL
 if ! command -v nodemon --version &> /dev/null
 then
     npm install -g nodemon
 else
     echo "docker already installed"
 fi
-
-if ! command -v tidal-cli --version &> /dev/null
-then
-    npm -g i tidal-cli-client@latest
-else
-    echo "tidal-cli already installed"
-fi
-
-sudo apt --fix-broken install -y
-sudo apt autoremove -y
 
 header "Install zsh"
 if ! command -v zsh --version &> /dev/null
@@ -265,7 +247,7 @@ omz update
 header "Install dotfiles"
 rm ~/.zshrc
 
-cd ~/Development/HetWebbureau/dotfiles-master
+cd ~/Development/HetWebbureau/dotfiles
 CPATH="$(pwd)/dotfiles"
 DOTFILES=$(cd ./dotfiles && ls -A | egrep '^\.')
 
@@ -352,7 +334,7 @@ sudo apt update -y
 sudo snap refresh
 
 header "Remove dependecies not required anymore"
-sudo apt autoremove
+sudo apt autoremove -y
 
 # curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
 
@@ -363,8 +345,10 @@ git clone https://github.com/R4YM3/react-cli.git
 header "initiate gnome terminal dracula theme install"
 sudo apt-get install -y -f dconf-cli
 mkdir ~/.config/terminal-themes
-cd ~/.config/terminal-themes && git clone https://github.com/dracula/gnome-terminal && cd gnome-terminal && ./install.sh
+cd ~/.config/terminal-themes && git clone https://github.com/dracula/gnome-terminal && cd gnome-terminal && ./install.sh -s Dracula -p Default --install-dircolors
+
 TODOS+=("Activate dracula theme in gnome terminal");
+# TODO THIS SHOULD GO AUTOMATIC
 
 header "Check for updates"
 sudo apt-get update
@@ -390,3 +374,4 @@ google-chrome https://extensions.gnome.org/extension/307/dash-to-dock/
 
 header "Refreshing shell..."
 exec zsh
+
