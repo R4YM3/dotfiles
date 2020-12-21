@@ -206,6 +206,7 @@ sudo apt-get install -y mono-xbuild
 sudo apt-get install -y openssh-server
 sudo apt-get install -y openconnect
 sudo apt-get install -y ack-grep
+sudo apt-get install -y graphviz
 
 if ! command -v docker &> /dev/null
 then

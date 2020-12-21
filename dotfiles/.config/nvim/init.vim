@@ -82,6 +82,9 @@ Plug 'christoomey/vim-tmux-navigator'           " vim style navigating between t
 Plug 'altercation/vim-colors-solarized'         " Solarized theme "
 Plug 'dracula/vim', { 'as': 'dracula' }         " Dracula theme "
 
+Plug 'aklt/plantuml-syntax'                     " PlantUML "
+Plug 'tyru/open-browser.vim'                    " required by PlantUML previewer"
+Plug 'weirongxu/plantuml-previewer.vim'         " PlantUML previewer "
 
 "
 " ctrlp
