@@ -27,8 +27,9 @@ alias varnish_test='tmuxinator start varnish_test'
 alias varnish_acc='tmuxinator start varnish_acc'
 alias varnish_prod='tmuxinator start varnish_prod'
 alias hetwebbureau='tmuxinator start hetwebbureau'
-alias cli='tmuxinator start cli'
-alias cli_typescrypt='tmuxinator start cli-typescript'
+alias react-cli='tmuxinator start react-cli'
+alias cli-interpreter='tmuxinator start cli-interpreter'
+alias hackathon='tmuxinator start hackathon-2021'
 
 alias base='tmuxinator start base'
 
