@@ -135,6 +135,7 @@ mkdir -p ~/Development/RTL/RTL
 mkdir -p ~/Development/RTL/Videoland
 
 header "Install applications"
+sudo apt install gimp
 sudo apt install -y snapd
 sudo snap install chromium
 sudo snap install opera
@@ -337,7 +338,7 @@ sudo snap refresh
 header "Remove dependecies not required anymore"
 sudo apt autoremove -y
 
-# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
 
 header "Download github repositories"
 cd ~/Development/HetWebbureau/

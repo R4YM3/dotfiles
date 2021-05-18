@@ -78,6 +78,7 @@ Plug 'w0rp/ale'                                 " linter "
 Plug 'majutsushi/tagbar'                        " tagbar with definitions "
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'               " Typescript "
+Plug 'peitalin/vim-jsx-typescript'              " Typescript with JSX "
 Plug 'christoomey/vim-tmux-navigator'           " vim style navigating between tmux and vim "
 Plug 'altercation/vim-colors-solarized'         " Solarized theme "
 Plug 'dracula/vim', { 'as': 'dracula' }         " Dracula theme "
