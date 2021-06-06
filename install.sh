@@ -1,11 +1,9 @@
-
 #!/usr/bin/env bash
 export DOTFILES_DIR
 export DEVELPMENT_DIR
 
-# DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DEVELOPMENT_DIR=~/DevelopmentA
+DEVELOPMENT_DIR=~/Development
 
 source ./helpers.sh
 
@@ -14,11 +12,13 @@ function install_linux_drivers {
 }
 
 function setup_environment {
+  clear
+
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     setup_linux
     setup_generic
   elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # setup_macos
+    setup_macos
     setup_generic
   else
     echo "Error: not able to setup environment: unknown OS"
@@ -26,24 +26,25 @@ function setup_environment {
 }
 
 function setup_linux {
-  source ./config/folders/setup.sh   # TODO: required ?
   source ./install/apt.sh
   source ./install/snap.sh
   source ./config/gnome/setup.sh # TODO: requires wallpaper
 }
 
 function setup_macos {
-  #source ./install/xcode.sh
-  #source ./install/brew.sh
-  #source ./install/brew-cask.sh
-  #source ./install/mas.sh
+  read -p "Please login App Store to install apps from App Store,  press <enter> to continue"
+  clear
+
+  source ./install/xcode.sh
+  source ./install/mas.sh
+  source ./install/brew.sh  #TODO only install brew if not yet intalled
+  source ./install/brew-cask.sh #TODO only install brew if not yet intalled
   source ./config/macos/setup.sh
 }
 
 function setup_generic {
   source ./config/zsh/setup.sh
   source ./config/dotfiles/setup.sh
-  source ./config/zsh/setup.sh
   source ./install/node.sh
   source ./config/nvim/setup.sh
   source ./config/tmux/setup.sh
@@ -51,44 +52,47 @@ function setup_generic {
 }
 
 function setup_development_projects {
+  clear
   source ./projects/hetwebbureau/install.sh
 }
 
-function init_menu {
-echo "select the operation ************"
-echo "  1) Install Linux drivers"
-echo "  2) Setup enviroment"
-echo "  3) Setup development projects"
-echo "  4) Quit"
-
-read n
-case $n in
-  1)
-    sudo -v
-    install_linux_drivers
-    ;;
-  2)
-    sudo -v
-    setup_environment
-
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-      # zsh as default shell
-      sudo echo /usr/local/bin/zsh >> /etc/shells
-      echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
-      chsh -s /usr/local/bin/zsh
-    fi
-
-    ;;
-  3)
-    setup_development_projects
-    ;;
-  4)
-    exit
-    ;;
-  *)
-    echo "invalid option $REPLY";;
-esac
+function request_sudo {
+  clear
+  echo "Requesting sudo powers upfront"
+  sudo -v
 }
 
-init_menu
+function print_main_menu {
+  clear
 
+  echo "What do you want to setup?"
+  echo "  1) Install Linux drivers"
+  echo "  2) Setup enviroment"
+  echo "  3) Setup development projects"
+  echo "  4) Quit"
+
+  read n
+  case $n in
+    1)
+      request_sudo
+      install_linux_drivers
+      print_main_menu
+      ;;
+    2)
+      request_sudo
+      setup_environment
+      print_main_menu
+      ;;
+    3)
+      setup_development_projects
+      print_main_menu
+      ;;
+    4)
+      exit
+      ;;
+    *)
+      echo "invalid option $REPLY";;
+  esac
+}
+
+print_main_menu

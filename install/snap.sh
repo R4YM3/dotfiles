@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+header "Snap"
+
 # Install snap packages
 
 apps=(

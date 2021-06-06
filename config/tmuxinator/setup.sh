@@ -1,4 +1,6 @@
-echo "SETUP TMUXINATOR   SYMLINKS??"
+#!/bin/bash
+
+header "Tmuxinator"
 
 TMUXINATOR_CONFIG_PROJECTS_DIR="$DOTFILES_DIR/config/tmuxinator/projects"
 

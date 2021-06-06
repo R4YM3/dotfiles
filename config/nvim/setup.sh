@@ -1,4 +1,6 @@
-header "install neovimm"
+#!/bin/bash
+
+header "Neovim"
 
 step "Install neovim dependecies"
 python3 -m pip install --upgrade pynvim
@@ -16,8 +18,8 @@ step "Install packages"
 nvim +'PlugInstall --sync' +qa
 
 step "Configure Youcompleteme package"
-cd ~/.config/nvim/plugged/youcompleteme && python3 install.py --all
+python3 ~/.config/nvim/plugged/youcompleteme/install.py --all
 
 step "Install fonts"
 # TODO: FireCode Nerd Fron = required
-cd ~/Downloads && git clone https://github.com/ryanoasis/nerd-fonts && ~/Downloads/nerd-fonts/install.sh
+git clone https://github.com/ryanoasis/nerd-fonts ~/Downloads/nerd-fonts && ~/Downloads/nerd-fonts/install.sh

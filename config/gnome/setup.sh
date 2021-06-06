@@ -1,8 +1,16 @@
+#!/bin/bash
+
+header "Gnome"
+
 # default dark mode theme to fallback
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
 # install dracula theme
 WANTED_THEME='Dracula'
+
+mkdir -p ~/.themes
+mkdir -p ~/.icons
+mkdir -p ~/.zsh
 
 # Download, unpack and install dracula theme
 CURRENT_GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
@@ -12,7 +20,6 @@ if [ $CURRENT_GTK_THEME != WANTED_THEME ]; then
     unzip master
     rm master
     mv ./gtk-master ./Dracula
-
 
     gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
     gsettings set org.gnome.desktop.wm.preferences theme "Dracula"

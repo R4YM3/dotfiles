@@ -4,13 +4,9 @@ which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    brew update
 fi
 
 # Install cask packages
-
-brew install --cask
 
 apps=(
     1password
@@ -27,9 +23,31 @@ apps=(
     tidal
     vlc
     whatsapp
+
+    # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
+    apparency
+    qlcolorcode
+    qlmarkdown
+    qlprettypatch
+    qlstephen
+    qlvideo
+    quicklook-csv
+    quicklook-json
+    quicklookase
+    suspicious-package
+    webpquicklook
 )
 
-brew install --cask "${apps[@]}"
+header "Brew cask"
 
-# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv webpquicklook suspicious-package && qlmanage qlimagesize apparency quicklookase qlvideo -r
+BREW_LIST=$(brew list)
+
+for i in "${apps[@]}"
+do
+  echo $BREW_LIST | grep $i &>/dev/null
+  if [[ $? != 0 ]] ; then
+    brew install --cask $i
+  else
+    already_installed $i
+  fi
+done

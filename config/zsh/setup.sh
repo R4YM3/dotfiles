@@ -1,17 +1,16 @@
 #!/bin/bash
 
-rm -rf ~/.oh-my-zsh
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+header "Setup ZSH"
 
-cd ~/.oh-my-zsh
+[ ! -d "~/.oh-my-zsh" ] && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-install_dotfile "$DOTFILES_DIR/config/zsh/.zshrc"
+[ ! -d "~/.zshrc" ] && install_dotfile "$DOTFILES_DIR/config/zsh/.zshrc"
 
 # downloads plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting --depth 1
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh  -o ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-completion
 
 # install nvm
 

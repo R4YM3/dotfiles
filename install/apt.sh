@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+header "Apt"
+
 # Install apt
 
 apps=(
@@ -32,9 +34,11 @@ apps=(
     git-crypt
     gnome-tweak-tool
     graphviz
+    htop
     kubectl
     lynx
     mono-xbuild
+    ncdu
     neovim
     nodejs
     openconnect
@@ -44,6 +48,7 @@ apps=(
     python3-pip
     snapd
     software-properties-commona
+    timetrap
     tmux
     tmuxinator
 
@@ -55,7 +60,15 @@ apps=(
     upgrade
 )
 
-sudo apt install -y "${apps[@]}"
+for i in "${apps[@]}"
+do
+  apt list | grep $1 &>/dev/null
+  if [[ $? != 0 ]] ; then
+    sudo apt install -y $i
+  else
+    already_installed $i
+  fi
+done
 
 if ! command -v google-chrome --version &> /dev/null
 then

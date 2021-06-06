@@ -16,6 +16,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source $DOTFILES_CONFIG_DIR/macos/.aliases
 fi
 
+alias dv="cd ~/Development"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 

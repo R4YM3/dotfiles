@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./helpers.sh
+header "Installing dotfiles"
 
 FILES="$DOTFILES_DIR/config/dotfiles/files"
 

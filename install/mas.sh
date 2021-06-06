@@ -8,11 +8,24 @@ if ! brew ls --versions mas > /dev/null; then
 fi
 
 APPLE_STORE_APPS=(
-    497799835 # xcode
     402398561 # mindNode Pro
     422025166 # screenFlow
     409203825 # numbers
     409201541 # pages
 )
 
-install 'mas install' ${APPLE_STORE_APPS[@]}
+header "Install Apple Store apps"
+
+MAS_LIST=$(mas list)
+
+for i in "${APPLE_STORE_APPS[@]}"
+do
+  echo $MAS_LIST | grep $i &>/dev/null
+  if [[ $? != 0 ]] ; then
+    mas install $i
+  else
+    already_installed $(mas list | grep $i)
+  fi
+done
+
+

@@ -28,6 +28,10 @@ function step {
     echo "${GREEN}$1${RESET}"
 }
 
+function already_installed {
+    echo "Already installed: $1"
+}
+
 function install_dotfile {
   ln -sf  $1 ~/
 }
