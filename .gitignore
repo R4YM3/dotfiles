@@ -1,12 +1,2 @@
-dotfiles/.themes
-
-!dotfiles/.config/
-dotfiles/.config/*
-
-!dotfiles/.config/nvim
-dotfiles/.config/nvim/*
-
-!dotfiles/.config/nvim/init.vim
-
-
-
+.DS_Store
+config/nvim/.config/nvim/plugged
