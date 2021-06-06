@@ -52,7 +52,7 @@ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 
 # set wallpaper
 # TODO: folder  does not exist
-gsettings set org.gnome.desktop.background picture-uri file:////home/picard/development/hetwebbureau/dotfiles/wallpaper.jpg
+gsettings set org.gnome.desktop.background picture-uri ./wallpaper.jpg
 
 sudo apt install -y -f dconf-cli
 mkdir ~/.config/terminal-themes

@@ -7,6 +7,8 @@ if [ $? -eq 0 ]; then
 else
     header "No internet detected, installing ethernet drivers"
 
+    source ./dongle.sh
+
     # TODO?
     #
     # download r8125-9.004.01  and install it..

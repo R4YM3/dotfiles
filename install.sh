@@ -28,7 +28,7 @@ function setup_environment {
 function setup_linux {
   source ./install/apt.sh
   source ./install/snap.sh
-  source ./config/gnome/setup.sh # TODO: requires wallpaper
+  source ./config/gnome/setup.sh
 }
 
 function setup_macos {
@@ -37,8 +37,8 @@ function setup_macos {
 
   source ./install/xcode.sh
   source ./install/mas.sh
-  source ./install/brew.sh  #TODO only install brew if not yet intalled
-  source ./install/brew-cask.sh #TODO only install brew if not yet intalled
+  source ./install/brew.sh
+  source ./install/brew-cask.sh
   source ./config/macos/setup.sh
 }
 
