@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+alias new-project='tmuxinator start new-project'
