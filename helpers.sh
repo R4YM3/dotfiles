@@ -40,5 +40,5 @@ function install_dotfile {
 TMUXINATOR_PROJECTS_DIR=~/.config/tmuxinator
 function install_tmuxinator_project {
   mkdir -p $TMUXINATOR_PROJECTS_DIR
-  ln -sf $1 $TMUXINATOR_PROJECTS_DIR
+  ln -sf $1 $TMUXINATOR_PROJECTS_DIR/$2
 }

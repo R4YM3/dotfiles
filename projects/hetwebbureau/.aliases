@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
 alias dotfiles='tmuxinator start dotfiles'
+alias react-cli='tmuxinator start react-cli'
