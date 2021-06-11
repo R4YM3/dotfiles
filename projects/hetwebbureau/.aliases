@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+alias hetwebbureau="cd ~/Development/hetwebbureau"
+alias hw="hetwebbureau"
 
 alias dotfiles='tmuxinator start dotfiles'
 alias react-cli='tmuxinator start react-cli'
