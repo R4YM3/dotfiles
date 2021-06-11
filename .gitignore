@@ -1,2 +1,3 @@
 .DS_Store
 config/nvim/.config/nvim/plugged
+config/item/themes

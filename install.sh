@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 export DOTFILES_DIR
+export DOTFILES_CONFIG_DIR
 export DEVELPMENT_DIR
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_CONFIG_DIR="$DOTFILES_DIR/config"
 DEVELOPMENT_DIR=~/Development
 
 source ./helpers.sh
@@ -40,6 +42,7 @@ function setup_macos {
   source ./install/brew.sh
   source ./install/brew-cask.sh
   source ./config/macos/setup.sh
+  source ./config/iterm.sh
 }
 
 function setup_generic {
