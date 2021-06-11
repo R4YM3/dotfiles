@@ -21,3 +21,7 @@ defaults read com.apple.Dock autohide
 
 # save screenshots in downloads folder
 defaults write com.apple.screencapture location ~/Downloads
+
+# set wallpaper
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$DOTFILES_DIR/wallpaper.jpg'";
+killall Dock;
