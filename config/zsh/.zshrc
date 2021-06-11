@@ -7,6 +7,7 @@ source ~/.functions
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+export OH_MY_ZSH=$ZSH
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -67,3 +68,6 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+
+# add whiteline after command output
+PS1=$'\n'"$PS1"
