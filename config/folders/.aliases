@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-alias dv="cd ~/Development"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
