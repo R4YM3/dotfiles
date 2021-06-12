@@ -21,14 +21,14 @@ Within the projects folder you have the possiblity to setup you projects automat
 ### Installing projects
 _First setup environment before installing projects._
 
-Just run `./dotfiles && ./install.sh` and choose install projects.
+Just run `$ ./dotfiles && ./install.sh` and choose install projects.
 
 ### Adding projects
-Just add a folder in `./dotfiles/projects/project-name` and add the files `install.sh` and `.aliases`.
+Just add a folder in `./projects/project-name` and add the files `install.sh` and `.aliases`.
 
 ```
-./dotfiles/projects/project-name/install.sh
-./dotfiles/projects/project-name/.aliases
+./projects/project-name/install.sh
+./projects/project-name/.aliases
 ```
 
 Purpose of these files:
@@ -40,7 +40,7 @@ Notice the following in the example projects
 - Each project installs a tmuxinator project
 - Each project a aliased tmuxinator project
 This will give the benefit to boot up a project with just one command, thanks to tmuxinator.
-Try execute `dotfiles` after installing projects.
+Try execute `$ dotfiles` after installing projects.
 
 ## Unfortunately after install there are still things you need todo.
 
@@ -53,7 +53,7 @@ Try execute `dotfiles` after installing projects.
 - Update capslock to behave as escape
 - Set dock to auto hide
 - Enable tap left-click on mousetrack
-- Configure iterm2 to use theme defined in `./dotfiles/config/iterm/themes/dracula/Dracula.itermcolors`
+- Configure iterm2 to use theme defined in `./config/iterm/themes/dracula/Dracula.itermcolors`
 - Configure iterm2 to use FireCode Nerd Font
 
 ## Todo:
