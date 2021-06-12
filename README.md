@@ -1,5 +1,5 @@
 # My dotfiles to config Ubuntu and Mac Os.
-The script will check if host Ubuntu or Mac Os and setup it accordingly.
+The script will check if host Ubuntu or Mac Os and setup it accordingly to my personal taste. The dotfiles will install all my favorite apps and command interfaces (see `./install`). It will also config the host OS and config some apps and command interface. To finish it all off Ubuntu and apps will be configured with a Dracula theme.
 
 ## Screenshots
 
