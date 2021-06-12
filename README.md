@@ -44,6 +44,10 @@ Notice the following in the example projects
 This will give the benefit to boot up a project with just one command, thanks to tmuxinator.
 Try execute `$ dotfiles` after installing projects.
 
+### Private projects
+Notice in `./projects/install.sh` that it's fetching a example private repository which you can use to install private projects.
+After cloning, it will go over each projects including the just fetched private repository.
+
 ## Unfortunately after install there are still things you need todo.
 Somethings are not yet configureable via command line or are still to do.
 
@@ -63,4 +67,4 @@ Somethings are not yet configureable via command line or are still to do.
 ## To do:
 - Config stuff which still are todo after setup (see previous list)
 - Command to boot a present of apps on pre-defined screen positions, for example: `$ boot development`. Which will boot all development apps, or `boot client-name` to boot all client specific apps.
-- Ubuntu driver installer
+- Ubuntu driver installer in a private repository to prevent leaking details about system.
