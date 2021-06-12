@@ -21,7 +21,7 @@ Within the projects folder you have the possiblity to setup you projects automat
 ### Installing projects
 _First setup environment before installing projects._
 
-Just run `$ ./dotfiles && ./install.sh` and choose install projects.
+Just run `./install.sh` and choose install projects.
 
 ### Adding projects
 Just add a folder in `./projects/project-name` and add the files `install.sh` and `.aliases`.
