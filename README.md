@@ -17,7 +17,7 @@ Just run `./dotfiles && ./install.sh` and choose install projects.
 ## Adding projects
 Just add a folder in `./dotfiles/projects` and add the files `install.sh` and `.aliases`
 
-# Unfortunately after install there are still things you need todo.
+## Unfortunately after install there are still things you need todo.
 
 ### Linux Ubuntu
 
