@@ -22,7 +22,8 @@ _First setup environment before installing projects._
 Just run `./dotfiles && ./install.sh` and choose install projects.
 
 ### Adding projects
-Just add a folder in `./dotfiles/projects/project-name` and add the files `install.sh` and `.aliases`
+Just add a folder in `./dotfiles/projects/project-name` and add the files `install.sh` and `.aliases`.
+You will have minimal:
 
 ```
 ./dotfiles/projects/project-name/install.sh
