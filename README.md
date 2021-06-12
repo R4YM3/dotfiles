@@ -9,12 +9,12 @@ chmod +x ./install.sh
 ./install.sh
 ```
 
-## Installing projects
+### Installing projects
 _First setup environment before installing projects._
 
 Just run `./dotfiles && ./install.sh` and choose install projects.
 
-## Adding projects
+### Adding projects
 Just add a folder in `./dotfiles/projects` and add the files `install.sh` and `.aliases`
 
 ## Unfortunately after install there are still things you need todo.
