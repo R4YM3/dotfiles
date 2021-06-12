@@ -1,4 +1,4 @@
-# My dotfiles to config Linux Ubuntu and Mac Os.
+# My dotfiles to config Ubuntu and Mac Os.
 The script will check if host Ubuntu or Mac Os and setup it accordingly.
 
 ## Screenshots
@@ -42,7 +42,7 @@ Try execute `dotfiles` after installing projects.
 
 ## Unfortunately after install there are still things you need todo.
 
-### Linux Ubuntu
+### Ubuntu
 
 - Update capslock to behave as escape
 
