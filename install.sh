@@ -5,6 +5,7 @@ export DEVELPMENT_DIR
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_CONFIG_DIR="$DOTFILES_DIR/config"
+DOTFILES_PROJECTS_DIR="$DOTFILES_DIR/projects"
 DEVELOPMENT_DIR=~/Development
 
 source ./helpers.sh
@@ -56,7 +57,7 @@ function setup_generic {
 
 function setup_development_projects {
   clear
-  source ./projects/hetwebbureau/install.sh
+  source ./projects/install.sh
 }
 
 function request_sudo {

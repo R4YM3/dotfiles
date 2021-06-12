@@ -7,7 +7,7 @@ DOTFILES_PROJECTS_DIR="$DOTFILES_DIR/projects"
 
 source $DOTFILES_CONFIG_DIR/nvim/.aliases
 source $DOTFILES_CONFIG_DIR/tmuxinator/.aliases
-source $DOTFILES_PROJECTS_DIR/hetwebbureau/.aliases
+source $DOTFILES_PROJECTS_DIR/.aliases
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source $DOTFILES_CONFIG_DIR/gnome/.aliases

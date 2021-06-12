@@ -1,3 +1,6 @@
-.DS_Store
 config/nvim/.config/nvim/plugged
 config/iterm/themes
+projects/*
+!projects/install.sh
+!projects/.aliases
+!projects/hetwebbureau
