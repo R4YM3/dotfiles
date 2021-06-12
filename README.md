@@ -11,18 +11,19 @@ chmod +x ./install.sh
 
 ## Installing projects
 _First setup environment before installing projects._
+
 Just run `./dotfiles && ./install.sh` and choose install projects.
 
 ## Adding projects
 Just add a folder in `./dotfiles/projects` and add the files `install.sh` and `.aliases`
 
-## Unfortunately after install there are still things you need todo.
+# Unfortunately after install there are still things you need todo.
 
-### On Mac OS
+### Linux Ubuntu
 
 - Update capslock to behave as escape
 
-### On Mac OS
+### Mac OS
 
 - Update capslock to behave as escape
 - Set dock to auto hide
