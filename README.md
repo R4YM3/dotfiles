@@ -1,6 +1,11 @@
 # My dotfiles to config Linux Ubuntu and Mac Os.
 The script will check if host Ubuntu or Mac Os and setup it accordingly.
 
+## Screenshots
+
+### Mac OS
+![alt text](https://github.com/R4YM3/dotfiles/blob/master/docs/macos-vim.png?raw=true)
+
 ## How to use:
 ```
 git clone https://github.com/R4YM3/dotfiles.git
