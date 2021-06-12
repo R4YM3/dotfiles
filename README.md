@@ -1,7 +1,9 @@
 # My dotfiles to config Ubuntu and Mac Os.
 The script will check if host Ubuntu or Mac Os and setup it accordingly to my personal taste.
-It will install all my favorite apps and command interfaces (see `./install`). It will also config the host OS and config some apps and command interface. To finish it all off Ubuntu and multiple apps will get Dracula theme (see `./config`).
+It will install all my favorite apps and command interfaces (see `./install`). It will also config the host OS, config some apps and command interface. To finish it all off Ubuntu and multiple apps will get Dracula theme (see `./config`).
 There is also an option to easily install projects.
+
+###
 
 ## Screenshots
 
@@ -38,7 +40,7 @@ Purpose of these files:
 
 Notice the following in the example projects
 - Each project installs a tmuxinator project
-- Each project a aliased tmuxinator project
+- Each project an aliased tmuxinator project
 This will give the benefit to boot up a project with just one command, thanks to tmuxinator.
 Try execute `$ dotfiles` after installing projects.
 
@@ -54,8 +56,9 @@ Somethings are not yet configureable via command line or are still to do.
 - Update capslock to behave as escape
 - Set dock to auto hide
 - Enable tap left-click on trackpad
-- Configure iterm2 to use theme defined in `./config/iterm/themes/dracula/Dracula.itermcolors`
-- Configure iterm2 to use FireCode Nerd Font
+- Configure iterm2 to use
+        - FireCode Nerd Font
+        - theme defined in `./config/iterm/themes/dracula/Dracula.itermcolors`
 
 ## To do:
 - Config stuff which still are todo after setup (see previous list)
