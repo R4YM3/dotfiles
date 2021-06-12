@@ -54,8 +54,9 @@ Try execute `dotfiles` after installing projects.
 - Set dock to auto hide
 - Enable tap left-click on mousetrack
 - Configure iterm2 to use theme defined in `./dotfiles/config/iterm/themes/dracula/Dracula.itermcolors`
+- Configure iterm2 to use FireCode Nerd Font
 
-## TODO:
+## Todo:
 - Config stuff which still are todo after setup (see previous list)
 - Command to boot a present of apps on pre-defined screen positions, for example: `$ boot development`. Which will boot all development apps, or `boot client-name` to boot all client specific apps.
 - Ubuntu driver installer
