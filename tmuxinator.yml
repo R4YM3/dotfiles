@@ -1,4 +1,4 @@
-name: new-project
+name: dotfiles
 root: ~/Development/hetwebbureau/dotfiles
 
 # Optional tmux socket
