@@ -1,5 +1,7 @@
 config/nvim/.config/nvim/plugged
 config/iterm/themes
+
+# to prevent adding private projects
 projects/*
 !projects/install.sh
 !projects/.aliases
