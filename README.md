@@ -43,6 +43,7 @@ This will give the benefit to boot up a project with just one command, thanks to
 Try execute `$ dotfiles` after installing projects.
 
 ## Unfortunately after install there are still things you need todo.
+Somethings are not yet configureable via command line or are still to do.
 
 ### Ubuntu
 
@@ -52,11 +53,11 @@ Try execute `$ dotfiles` after installing projects.
 
 - Update capslock to behave as escape
 - Set dock to auto hide
-- Enable tap left-click on mousetrack
+- Enable tap left-click on trackpad
 - Configure iterm2 to use theme defined in `./config/iterm/themes/dracula/Dracula.itermcolors`
 - Configure iterm2 to use FireCode Nerd Font
 
-## Todo:
+## To do:
 - Config stuff which still are todo after setup (see previous list)
 - Command to boot a present of apps on pre-defined screen positions, for example: `$ boot development`. Which will boot all development apps, or `boot client-name` to boot all client specific apps.
 - Ubuntu driver installer
