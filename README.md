@@ -8,6 +8,7 @@ cd  ./dotfiles
 chmod +x ./install.sh
 ./install.sh
 ```
+## Projects
 
 ### Installing projects
 _First setup environment before installing projects._
