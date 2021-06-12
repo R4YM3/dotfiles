@@ -45,8 +45,8 @@ This will give the benefit to boot up a project with just one command, thanks to
 Try execute `$ dotfiles` after installing projects.
 
 ### Private projects
-Notice in `./projects/install.sh` that it's fetching a example private repository which you can use to install private projects.
-After cloning, it will go over each projects including the just fetched private repository.
+Notice in `./projects/install.sh` that it's cloning an example private repository.
+After cloning, it will go over each project and install it, including the just fetched private repository.
 
 ## Unfortunately after install there are still things you need todo.
 Somethings are not yet configureable via command line or are still to do.
