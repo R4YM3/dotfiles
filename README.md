@@ -22,10 +22,17 @@ _First setup environment before installing projects._
 Just run `./dotfiles && ./install.sh` and choose install projects.
 
 ### Adding projects
-Just add a folder in `./dotfiles/projects` and add the files `install.sh` and `.aliases`
+Just add a folder in `./dotfiles/projects/project-name` and add the files `install.sh` and `.aliases`
 
-`install.sh` is sourced to install the project (it will inherit all the helpers).
-`.aliases` is eventually sourced in .zshrc.
+```
+./dotfiles/projects/project-name/install.sh
+./dotfiles/projects/project-name/.aliases
+```
+
+Note:
+
+- `install.sh` is sourced to install the project (it will inherit all the helpers).
+- `.aliases` is eventually sourced in .zshrc.
 
 Notice the following in the example projects
 - Each project installs a tmuxinator project
