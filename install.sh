@@ -70,28 +70,29 @@ function print_main_menu {
   clear
 
   echo "What do you want to setup?"
-  echo "  1) Install Linux drivers"
-  echo "  2) Setup enviroment"
-  echo "  3) Setup development projects"
-  echo "  4) Quit"
+  echo "  1) Setup enviroment"
+  echo "  2) Setup development projects"
+  # echo "  3) Install Linux drivers" TODO
+  echo ""
+  echo "  q) Quit"
 
   read n
   case $n in
     1)
       request_sudo
-      install_linux_drivers
-      print_main_menu
-      ;;
-    2)
-      request_sudo
       setup_environment
       print_main_menu
       ;;
-    3)
+    2)
       setup_development_projects
       print_main_menu
       ;;
-    4)
+    # 3)
+    #  request_sudo
+    #  install_linux_drivers
+    #  print_main_menu
+    #  ;;
+    q)
       exit
       ;;
     *)
