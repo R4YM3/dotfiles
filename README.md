@@ -46,7 +46,7 @@ Notice in `./projects/install.sh` that it's cloning an example private repositor
 After cloning, it will go over each project and install it, including the just fetched private repository.
 
 ## Installing drivers
-Some machines needs to have drivers to work properly.
+Some of my personal machines needs to have drivers to work properly.
 The installer for this will be downloaded from a private repository.
 Follow the steps of the installer to install the drivers.
 
@@ -60,8 +60,6 @@ Somethings are not yet configureable via command line or are still to do.
 ### Mac OS
 
 - Update capslock to behave as escape
-- Set dock to auto hide
-- Enable tap left-click on trackpad
 - Configure iterm2 to use
         - FireCode Nerd Font
         - theme defined in `./config/iterm/themes/dracula/Dracula.itermcolors`
