@@ -60,7 +60,7 @@ function setup_development_projects {
 }
 
 
-function install_linux_drivers {
+function install_drivers {
   mkdir -p $DOTFILES_DRIVERS_DIR
   download_repository git@bitbucket.org:R4YM3/private-drivers-installer.git $DOTFILES_DRIVERS_DIR
   install_tmuxinator_project "$DOTFILES_DRIVERS_DIR/tmuxinator.yml" "drivers.yml"
@@ -79,7 +79,7 @@ function print_main_menu {
   echo "What do you want to setup?"
   echo "  1) Setup enviroment"
   echo "  2) Setup development projects"
-  echo "  3) Install Linux drivers"
+  echo "  3) Install drivers"
   echo ""
   echo "  q) Quit"
 
@@ -96,7 +96,7 @@ function print_main_menu {
       ;;
     3)
       request_sudo
-      install_linux_drivers
+      install_drivers
       print_main_menu
       ;;
     q)
