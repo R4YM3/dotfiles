@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 export DOTFILES_DIR
 export DOTFILES_CONFIG_DIR
+export DOTFILES_DRIVERS_DIR
+export DOTFILES_PROJECTS_DIR
 export DEVELPMENT_DIR
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOTFILES_CONFIG_DIR="$DOTFILES_DIR/config"
+DOTFILES_DRIVERS_DIR="$DOTFILES_DIR/drivers"
 DOTFILES_PROJECTS_DIR="$DOTFILES_DIR/projects"
 DEVELOPMENT_DIR=~/Development
 
 source ./helpers.sh
-
-function install_linux_drivers {
-  source ./drivers/linux/enterprise/install.sh
-}
 
 function setup_environment {
   clear
@@ -60,6 +59,14 @@ function setup_development_projects {
   source ./projects/install.sh
 }
 
+
+function install_linux_drivers {
+  mkdir -p $DOTFILES_DRIVERS_DIR
+  download_repository git@bitbucket.org:R4YM3/private-drivers-installer.git $DOTFILES_DRIVERS_DIR
+  install_tmuxinator_project "$DOTFILES_DRIVERS_DIR/tmuxinator.yml" "drivers.yml"
+  source $DOTFILES_DRIVERS_DIR/install.sh
+}
+
 function request_sudo {
   clear
   echo "Requesting sudo powers upfront"
@@ -72,7 +79,7 @@ function print_main_menu {
   echo "What do you want to setup?"
   echo "  1) Setup enviroment"
   echo "  2) Setup development projects"
-  # echo "  3) Install Linux drivers" TODO
+  echo "  3) Install Linux drivers"
   echo ""
   echo "  q) Quit"
 
@@ -87,11 +94,11 @@ function print_main_menu {
       setup_development_projects
       print_main_menu
       ;;
-    # 3)
-    #  request_sudo
-    #  install_linux_drivers
-    #  print_main_menu
-    #  ;;
+    3)
+      request_sudo
+      install_linux_drivers
+      print_main_menu
+      ;;
     q)
       exit
       ;;

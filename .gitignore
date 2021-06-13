@@ -1,8 +1,11 @@
 config/nvim/.config/nvim/plugged
 config/iterm/themes
 
-# to prevent adding private projects
+# prevent adding private projects
 projects/*
 !projects/install.sh
 !projects/.aliases
 !projects/hetwebbureau
+
+# prevent adding drivers repository
+drivers/*

@@ -9,6 +9,8 @@ source $DOTFILES_CONFIG_DIR/nvim/.aliases
 source $DOTFILES_CONFIG_DIR/tmuxinator/.aliases
 source $DOTFILES_PROJECTS_DIR/.aliases
 
+source $DOTFILES_DRIVERS_DIR/.aliases 2> /dev/null # snooze when drivers not installed
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source $DOTFILES_CONFIG_DIR/gnome/.aliases
 elif [[ "$OSTYPE" == "darwin"* ]]; then
