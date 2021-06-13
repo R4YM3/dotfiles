@@ -7,7 +7,6 @@ There is also an option to easily install projects.
 
 ## Screenshots
 
-### Mac OS
 ![alt text](https://github.com/R4YM3/dotfiles/blob/master/docs/macos-vim.png?raw=true)
 
 ## How to use:
