@@ -47,6 +47,11 @@ Try execute `$ dotfiles` after installing projects.
 Notice in `./projects/install.sh` that it's cloning an example private repository.
 After cloning, it will go over each project and install it, including the just fetched private repository.
 
+## Installing drivers
+Some machines needs to have drivers to work properly.
+The installer for this will be downloaded from a private repository.
+Follow the steps of the installer to install the drivers.
+
 ## Unfortunately after install there are still things you need todo.
 Somethings are not yet configureable via command line or are still to do.
 
@@ -66,4 +71,3 @@ Somethings are not yet configureable via command line or are still to do.
 ## To do:
 - Config stuff which still are todo after setup (see previous list)
 - Command to boot a present of apps on pre-defined screen positions, for example: `$ boot development`. Which will boot all development apps, or `boot client-name` to boot all client specific apps.
-- Ubuntu driver installer in a private repository to prevent leaking details about system.
