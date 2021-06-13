@@ -7,7 +7,7 @@ There is also an option to easily install projects.
 
 ## Screenshots
 
-![alt text](https://github.com/R4YM3/dotfiles/blob/master/macos-vim.png?raw=true)
+![Mac OS Iterm2 with nvim and tmux screenshot](https://github.com/R4YM3/dotfiles/blob/master/screenshot.png?raw=true)
 
 ## How to use:
 ```
