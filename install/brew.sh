@@ -11,6 +11,7 @@ fi
 # Install packages
 
 apps=(
+    ack
     cmake
     docker
     docker-compose
