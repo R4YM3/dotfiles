@@ -12,7 +12,7 @@ DRIVERS_DIR="$DOTFILES_DIR/drivers"
 PROJECTS_DIR="$DOTFILES_DIR/projects"
 DEVELOPMENT_DIR=~/Development
 
-source ./helpers.sh
+source $DOTFILES_DIR/helpers.sh
 
 function setup_environment {
   clear
