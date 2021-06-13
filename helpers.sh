@@ -42,3 +42,9 @@ function install_tmuxinator_project {
   mkdir -p $TMUXINATOR_PROJECTS_DIR
   ln -sf $1 $TMUXINATOR_PROJECTS_DIR/$2
 }
+
+function download_repository {
+    # download private repositories installer (without .git because we are already in a repository)
+    cd $2 && git archive --format=tar --remote=$1 HEAD | tar xf -
+    cd $DOTFILES_DIR
+}

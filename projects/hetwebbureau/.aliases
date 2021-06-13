@@ -4,3 +4,5 @@ alias hw="hetwebbureau"
 
 alias dotfiles='tmuxinator start dotfiles'
 alias react-cli='tmuxinator start react-cli'
+alias private-repositories-installer='tmuxinator start private-repositories-installer'
+alias private-drivers-installer='tmuxinator start private-drivers-installer'
