@@ -19,10 +19,10 @@ function setup_environment {
 
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     setup_linux
-    setup_generic
+    setup_unix
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     setup_macos
-    setup_generic
+    setup_unix
   else
     echo "Error: not able to setup environment: unknown OS"
   fi
@@ -46,7 +46,7 @@ function setup_macos {
   source $CONFIG_DIR/iterm.sh
 }
 
-function setup_generic {
+function setup_unix {
   source $CONFIG_DIR/zsh/setup.sh
   source $CONFIG_DIR/dotfiles/setup.sh
   source $INSTALL_DIR/node.sh
