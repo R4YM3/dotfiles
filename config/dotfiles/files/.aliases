@@ -2,19 +2,19 @@
 
 # get path from symlinked file
 DOTFILES_DIR=$(dirname $(readlink ~/.aliases  | rev | cut -d'/' -f4- | rev))
-DOTFILES_CONFIG_DIR="$DOTFILES_DIR/config"
-DOTFILES_PROJECTS_DIR="$DOTFILES_DIR/projects"
+CONFIG_DIR="$DOTFILES_DIR/config"
+PROJECTS_DIR="$DOTFILES_DIR/projects"
 
-source $DOTFILES_CONFIG_DIR/nvim/.aliases
-source $DOTFILES_CONFIG_DIR/tmuxinator/.aliases
-source $DOTFILES_PROJECTS_DIR/.aliases
+source $CONFIG_DIR/nvim/.aliases
+source $CONFIG_DIR/tmuxinator/.aliases
+source $PROJECTS_DIR/.aliases
 
-source $DOTFILES_DRIVERS_DIR/.aliases 2> /dev/null # snooze when drivers not installed
+source $DRIVERS_DIR/.aliases 2> /dev/null # snooze when drivers not installed
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source $DOTFILES_CONFIG_DIR/gnome/.aliases
+    source $CONFIG_DIR/gnome/.aliases
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    source $DOTFILES_CONFIG_DIR/macos/.aliases
+    source $CONFIG_DIR/macos/.aliases
 fi
 
 alias dv="cd ~/Development"

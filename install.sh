@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 export DOTFILES_DIR
-export DOTFILES_CONFIG_DIR
-export DOTFILES_DRIVERS_DIR
-export DOTFILES_PROJECTS_DIR
+export CONFIG_DIR
+export DRIVERS_DIR
+export PROJECTS_DIR
 export DEVELPMENT_DIR
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES_CONFIG_DIR="$DOTFILES_DIR/config"
-DOTFILES_DRIVERS_DIR="$DOTFILES_DIR/drivers"
-DOTFILES_PROJECTS_DIR="$DOTFILES_DIR/projects"
+CONFIG_DIR="$DOTFILES_DIR/config"
+DRIVERS_DIR="$DOTFILES_DIR/drivers"
+PROJECTS_DIR="$DOTFILES_DIR/projects"
 DEVELOPMENT_DIR=~/Development
 
 source ./helpers.sh
@@ -61,10 +61,10 @@ function setup_development_projects {
 
 
 function install_drivers {
-  mkdir -p $DOTFILES_DRIVERS_DIR
-  download_repository git@bitbucket.org:R4YM3/private-drivers-installer.git $DOTFILES_DRIVERS_DIR
-  install_tmuxinator_project "$DOTFILES_DRIVERS_DIR/tmuxinator.yml" "drivers.yml"
-  source $DOTFILES_DRIVERS_DIR/install.sh
+  mkdir -p $DRIVERS_DIR
+  download_repository git@bitbucket.org:R4YM3/private-drivers-installer.git $DRIVERS_DIR
+  install_tmuxinator_project "$DRIVERS_DIR/tmuxinator.yml" "drivers.yml"
+  source $DRIVERS_DIR/install.sh
 }
 
 function request_sudo {
