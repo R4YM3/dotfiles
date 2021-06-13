@@ -7,6 +7,7 @@ export DEVELPMENT_DIR
 
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CONFIG_DIR="$DOTFILES_DIR/config"
+INSTALL_DIR="$DOTFILES_DIR/install"
 DRIVERS_DIR="$DOTFILES_DIR/drivers"
 PROJECTS_DIR="$DOTFILES_DIR/projects"
 DEVELOPMENT_DIR=~/Development
@@ -28,35 +29,35 @@ function setup_environment {
 }
 
 function setup_linux {
-  source ./install/apt.sh
-  source ./install/snap.sh
-  source ./config/gnome/setup.sh
+  source $INSTALL_DIR/apt.sh
+  source $INSTALL_DIR/snap.sh
+  source $CONFIG_DIR/gnome/setup.sh
 }
 
 function setup_macos {
   read -p "Please login App Store to install apps from App Store,  press <enter> to continue"
   clear
 
-  source ./install/xcode.sh
-  source ./install/mas.sh
-  source ./install/brew.sh
-  source ./install/brew-cask.sh
-  source ./config/macos/setup.sh
-  source ./config/iterm.sh
+  source $INSTALL_DIR/xcode.sh
+  source $INSTALL_DIR/mas.sh
+  source $INSTALL_DIR/brew.sh
+  source $INSTALL_DIR/brew-cask.sh
+  source $CONFIG_DIR/macos/setup.sh
+  source $CONFIG_DIR/iterm.sh
 }
 
 function setup_generic {
-  source ./config/zsh/setup.sh
-  source ./config/dotfiles/setup.sh
-  source ./install/node.sh
-  source ./config/nvim/setup.sh
-  source ./config/tmux/setup.sh
-  source ./config/tmuxinator/setup.sh
+  source $CONFIG_DIR/zsh/setup.sh
+  source $CONFIG_DIR/dotfiles/setup.sh
+  source $INSTALL_DIR/node.sh
+  source $CONFIG_DIR/nvim/setup.sh
+  source $CONFIG_DIR/tmux/setup.sh
+  source $CONFIG_DIR/tmuxinator/setup.sh
 }
 
 function setup_development_projects {
   clear
-  source ./projects/install.sh
+  source $PROJECTS_DIR/install.sh
 }
 
 
