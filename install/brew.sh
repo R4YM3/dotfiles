@@ -26,6 +26,7 @@ apps=(
     neovim
     node
     openvpn
+    openconnect
     python
     tmux
     tmuxinator
