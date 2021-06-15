@@ -16,6 +16,7 @@ apps=(
     google-chrome
     iterm2
     macdown
+    microsoft-teams
     notion
     opera
     postman
