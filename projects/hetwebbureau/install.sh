@@ -12,6 +12,9 @@ install_tmuxinator_project "$HETWEBBUREAU_DIR/dotfiles/tmuxinator.yml" "dotfiles
 git clone https://github.com/R4YM3/react-cli.git "$HETWEBBUREAU_DIR/react-cli"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/react-cli/tmuxinator.yml" "react-cli.yml"
 
+git clone https://github.com/R4YM3/web-cli.git "$HETWEBBUREAU_DIR/web-cli"
+install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli/tmuxinator.yml" "web-cli.yml"
+
 git clone git@bitbucket.org:R4YM3/private-repositories-installer.git "$HETWEBBUREAU_DIR/private-repositories-installer"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/private-repositories-installer/tmuxinator.yml" "private-repositories-installer.yml"
 
