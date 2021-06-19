@@ -10,6 +10,7 @@ fi
 
 apps=(
     1password
+    cyberduck
     firefox
     gitkraken
     gitup

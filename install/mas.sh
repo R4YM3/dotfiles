@@ -12,7 +12,6 @@ APPLE_STORE_APPS=(
     422025166 # screenFlow
     409203825 # numbers
     409201541 # pages
-    1436522307 # transmit
 )
 
 header "Install Apple Store apps"
