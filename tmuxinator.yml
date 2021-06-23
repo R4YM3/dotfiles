@@ -20,10 +20,13 @@ windows:
       layout: main-vertical
       panes:
         - left:
+          - cd ~/Development/hetwebbureau/dotfiles
           - vim
         - right 1:
+          - cd ~/Development/hetwebbureau/dotfiles
           - git status
         - right 2:
+          - cd ~/Development/hetwebbureau/dotfiles
           - la
         - right 3:
           - cd ~ && la
