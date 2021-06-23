@@ -5,11 +5,6 @@ header "Apt"
 # Install apt
 
 apps=(
-    update
-    upgrade
-
-    full-upgrade
-
     build-essential
     libssl-dev
     git
@@ -35,7 +30,7 @@ apps=(
     gnome-tweak-tool
     graphviz
     htop
-    kubectl
+    # kubectl
     lynx
     mono-xbuild
     ncdu
@@ -47,24 +42,26 @@ apps=(
     preload
     python3-pip
     snapd
-    software-properties-commona
-    timetrap
     tmux
     tmuxinator
 
     virtualbox
     zsh
-
-    autoremove
-    update
-    upgrade
 )
+
+apt-get autoremove
+apt-get update
+apt-get upgrade
+apt-get full-upgrade
+
+APT_LIST=$(apt list)
 
 for i in "${apps[@]}"
 do
-  apt list | grep $1 &>/dev/null
+  echo $APT_LIST | grep $i &>/dev/null
+
   if [[ $? != 0 ]] ; then
-    sudo apt install -y $i
+    sudo apt-get install -y $i
   else
     already_installed $i
   fi

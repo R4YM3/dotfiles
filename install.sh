@@ -75,8 +75,9 @@ function request_sudo {
 }
 
 function print_main_menu {
-  clear
 
+  echo ""
+  echo ""
   echo "What do you want to setup?"
   echo "  1) Setup enviroment"
   echo "  2) Setup development projects"
