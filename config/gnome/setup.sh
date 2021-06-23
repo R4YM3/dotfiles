@@ -57,3 +57,6 @@ gsettings set org.gnome.desktop.background picture-uri ./wallpaper.jpg
 sudo apt install -y -f dconf-cli
 mkdir ~/.config/terminal-themes
 cd ~/.config/terminal-themes && git clone https://github.com/dracula/gnome-terminal && cd gnome-terminal && ./install.sh -s Dracula -p Default --install-dircolors
+
+# set chrome as default browser
+xdg-settings set default-web-browser google-chrome.desktop
