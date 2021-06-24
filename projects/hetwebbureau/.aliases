@@ -5,6 +5,6 @@ alias hw="hetwebbureau"
 alias dotfiles='tmuxinator start dotfiles'
 alias react-cli='tmuxinator start react-cli'
 alias web-cli='tmuxinator start web-cli'
-alias web-cli-interpreter='tmuxinator start web-cli-interpreter'
+alias web-cli-shell='tmuxinator start web-cli-shell'
 alias private-repositories-installer='tmuxinator start private-repositories-installer'
 alias private-drivers-installer='tmuxinator start private-drivers-installer'
