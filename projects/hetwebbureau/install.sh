@@ -18,8 +18,13 @@ install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli/tmuxinator.yml" "web-cli.y
 git clone https://github.com/R4YM3/web-cli-interpreter.git "$HETWEBBUREAU_DIR/web-cli-interpreter"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli-interpreter/tmuxinator.yml" "web-cli-interpreter.yml"
 
+git clone https://github.com/R4YM3/web-cli-todo.git "$HETWEBBUREAU_DIR/web-cli-todo"
+install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli-todo/tmuxinator.yml" "web-cli-todo.yml"
+
 git clone git@bitbucket.org:R4YM3/private-repositories-installer.git "$HETWEBBUREAU_DIR/private-repositories-installer"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/private-repositories-installer/tmuxinator.yml" "private-repositories-installer.yml"
 
 git clone git@bitbucket.org:R4YM3/private-drivers-installer.git "$HETWEBBUREAU_DIR/private-drivers-installer"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/private-drivers-installer/tmuxinator.yml" "private-drivers-installer.yml"
+
+
