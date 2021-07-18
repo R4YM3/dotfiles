@@ -1,6 +1,6 @@
-# My dotfiles to config Linux and Mac Os.
+# My dotfiles to config Linux Ubuntu and Mac Os.
 The script will check if host Linux or Mac Os and setup it accordingly to my personal taste.
-It will install all my favorite apps and command interfaces (see `./install`). It will also config the host OS, config some apps and command interface. To finish it all off Linux and multiple apps will get Dracula theme (see `./config`).
+It will install all my favorite apps and command interfaces (see `./install`). It will also config the host OS, config some apps and command interface. To finish it all off Ubuntu and multiple apps will get Dracula theme (see `./config`).
 There is also an option to easily install projects.
 
 ## Screenshots
@@ -53,7 +53,7 @@ Follow the steps of the installer to install the drivers.
 ## Unfortunately after install there are still things you need todo.
 Somethings are not yet configureable via command line or are still to do.
 
-### Linux
+### Ubuntu
 
 - Update capslock to behave as escape
 
