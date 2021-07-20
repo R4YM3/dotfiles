@@ -49,10 +49,10 @@ apps=(
     zsh
 )
 
-apt-get autoremove
-apt-get update
-apt-get upgrade
-apt-get full-upgrade
+sudo apt-get autoremove -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get full-upgrade -y
 
 APT_LIST=$(apt list)
 
