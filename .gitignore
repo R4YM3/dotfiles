@@ -6,6 +6,3 @@ projects/*
 !projects/install.sh
 !projects/.aliases
 !projects/hetwebbureau
-
-# prevent adding drivers repository
-drivers/*
