@@ -53,6 +53,9 @@ function setup_unix {
   source $CONFIG_DIR/nvim/setup.sh
   source $CONFIG_DIR/tmux/setup.sh
   source $CONFIG_DIR/tmuxinator/setup.sh
+
+  # make zsh default
+  chsh -s $(which zsh)
 }
 
 function setup_development_projects {
