@@ -12,7 +12,6 @@ apps=(
     discord
     doctl
     gitkraken --classic
-    glow
     go --classic
     gotop
     heroku --classic
@@ -21,7 +20,6 @@ apps=(
     mailspring
     opera
     postman
-    skype --classic
     slack --classic
     slack-term
     spotify
@@ -29,6 +27,10 @@ apps=(
     vlc
 )
 
-sudo snap install "${apps[@]}"
+
+for i in "${apps[@]}"
+do
+  sudo snap install $i
+done
 
 sudo snap refresh
