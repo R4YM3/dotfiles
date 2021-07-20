@@ -68,7 +68,6 @@ alias reload="exec $SHELL -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # Shortcuts
-alias g="git"
 alias h="history"
 alias j="jobs"
 alias n="npm"

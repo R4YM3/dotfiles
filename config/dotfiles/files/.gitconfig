@@ -179,11 +179,8 @@
 
 	insteadOf = "gist:"
 [user]
-	name = Raymond
+	name = Raymond Schweers
 	email = raymond@hetwebbureau.nl
-	name = Raymond
-	name = Raymond
-	name = Raymond
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
