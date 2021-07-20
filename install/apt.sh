@@ -67,3 +67,7 @@ then
 
     sudo apt install chrome-gnome-shell
 fi
+
+sudo add-apt-repository ppa:lutris-team/lutris
+sudo apt update
+sudo apt install lutris

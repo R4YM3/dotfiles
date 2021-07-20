@@ -32,6 +32,7 @@ function setup_linux {
   source $INSTALL_DIR/apt.sh
   source $INSTALL_DIR/snap.sh
   source $CONFIG_DIR/gnome/setup.sh
+  source $INSTALL_DIR/lutris.sh
 }
 
 function setup_macos {
