@@ -12,14 +12,14 @@ install_tmuxinator_project "$HETWEBBUREAU_DIR/dotfiles/tmuxinator.yml" "dotfiles
 git clone https://github.com/R4YM3/react-cli.git "$HETWEBBUREAU_DIR/react-cli"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/react-cli/tmuxinator.yml" "react-cli.yml"
 
-git clone https://github.com/R4YM3/web-cli.git "$HETWEBBUREAU_DIR/web-cli"
-install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli/tmuxinator.yml" "web-cli.yml"
+git clone https://github.com/R4YM3/webcli.git "$HETWEBBUREAU_DIR/webcli"
+install_tmuxinator_project "$HETWEBBUREAU_DIR/webcli/tmuxinator.yml" "webcli.yml"
 
-git clone https://github.com/R4YM3/web-cli-interpreter.git "$HETWEBBUREAU_DIR/web-cli-interpreter"
-install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli-interpreter/tmuxinator.yml" "web-cli-interpreter.yml"
+git clone https://github.com/R4YM3/webcli-interpreter.git "$HETWEBBUREAU_DIR/webcli-interpreter"
+install_tmuxinator_project "$HETWEBBUREAU_DIR/webcli-interpreter/tmuxinator.yml" "webcli-interpreter.yml"
 
-git clone https://github.com/R4YM3/web-cli-todo.git "$HETWEBBUREAU_DIR/web-cli-todo"
-install_tmuxinator_project "$HETWEBBUREAU_DIR/web-cli-todo/tmuxinator.yml" "web-cli-todo.yml"
+git clone https://github.com/R4YM3/webcli-todo.git "$HETWEBBUREAU_DIR/webcli-todo"
+install_tmuxinator_project "$HETWEBBUREAU_DIR/webcli-todo/tmuxinator.yml" "webcli-todo.yml"
 
 git clone git@bitbucket.org:R4YM3/private-repositories-installer.git "$HETWEBBUREAU_DIR/private-repositories-installer"
 install_tmuxinator_project "$HETWEBBUREAU_DIR/private-repositories-installer/tmuxinator.yml" "private-repositories-installer.yml"
