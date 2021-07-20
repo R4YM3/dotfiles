@@ -54,17 +54,9 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get full-upgrade -y
 
-APT_LIST=$(apt list)
-
 for i in "${apps[@]}"
 do
-  echo $APT_LIST | grep $i &>/dev/null
-
-  if [[ $? != 0 ]] ; then
-    sudo apt-get install -y $i
-  else
-    already_installed $i
-  fi
+  sudo apt-get install -y $i
 done
 
 if ! command -v google-chrome --version &> /dev/null

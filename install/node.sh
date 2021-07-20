@@ -20,14 +20,7 @@ packages=(
     nodemon
 )
 
-NPM_GLOBAL_LIST=$(npm -g list)
-
 for i in "${packages[@]}"
 do
-  echo $NPM_GLOBAL_LIST | grep $i &>/dev/null
-  if [[ $? != 0 ]] ; then
     npm install -g $i
-  else
-    already_installed $i
-  fi
 done
