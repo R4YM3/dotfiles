@@ -4,7 +4,6 @@ It will install all my favorite apps and command interfaces (see `./install`). I
 There is also an option to easily install projects.
 
 ## Screenshots
-
 ![Mac OS Iterm2 with nvim and tmux screenshot](https://github.com/R4YM3/dotfiles/blob/master/screenshot.png?raw=true)
 
 ## How to use:
@@ -54,11 +53,9 @@ Follow the steps of the installer to install the drivers.
 Somethings are not yet configureable via command line or are still to do.
 
 ### Ubuntu
-
 - Update capslock to behave as escape
 
 ### Mac OS
-
 - Update capslock to behave as escape
 - Configure iterm2 to use
         - FireCode Nerd Font
