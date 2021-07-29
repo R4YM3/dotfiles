@@ -61,4 +61,5 @@ Somethings are not yet configureable via command line or are still to do.
 
 ## To do:
 - Config stuff which still are todo after setup (see previous list)
+- Only install required fonts
 - Command to boot a present of apps on pre-defined screen positions, for example: `$ boot development`. Which will boot all development apps, or `boot client-name` to boot all client specific apps.
