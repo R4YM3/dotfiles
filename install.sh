@@ -34,6 +34,8 @@ function setup_linux {
 }
 
 function setup_macos {
+  sudo softwareupdate --install-rosetta
+  
   read -p "Please login App Store to install apps from App Store,  press <enter> to continue"
   clear
 
