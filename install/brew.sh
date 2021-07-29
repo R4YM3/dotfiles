@@ -6,6 +6,10 @@ which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    # add homwbrew to PATH
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/voyager/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Install packages
