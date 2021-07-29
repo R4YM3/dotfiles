@@ -18,6 +18,9 @@ defaults write -g NSRequiresAquaSystemAppearance -bool true
 # remove all apps from dock
 defaults write com.apple.dock persistent-apps -array
 
+# smaller icons in dock
+defaults write com.apple.dock tilesize -integer 32
+
 # hide dock
 defaults write com.apple.dock autohide-time-modifier -float 0.25;killall Dock
 defaults read com.apple.Dock autohide
