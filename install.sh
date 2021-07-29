@@ -40,8 +40,8 @@ function setup_macos {
   clear
 
   source $INSTALL_DIR/xcode.sh
-  source $INSTALL_DIR/mas.sh
   source $INSTALL_DIR/brew.sh
+  source $INSTALL_DIR/mas.sh
   source $INSTALL_DIR/brew-cask.sh
   source $CONFIG_DIR/macos/setup.sh
   source $CONFIG_DIR/iterm.sh
