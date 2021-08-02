@@ -3,6 +3,7 @@ alias hetwebbureau="cd ~/Development/hetwebbureau"
 alias hw="hetwebbureau"
 
 alias dotfiles='tmuxinator start dotfiles'
+alias dotfiles-ansible='tmuxinator start dotfiles-ansible'
 alias react-cli='tmuxinator start react-cli'
 alias webcli='tmuxinator start webcli'
 alias webcli-interpreter='tmuxinator start webcli-interpreter'
