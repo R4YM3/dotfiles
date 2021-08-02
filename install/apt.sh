@@ -24,6 +24,7 @@ apps=(
     docker-ce
     fonts-firacode
     fonts-powerline
+    flameshot
     gimp
     git-all
     git-crypt
