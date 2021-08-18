@@ -1,3 +1,6 @@
+# Deprecated
+_This project replaced by https://github.com/R4YM3/dotfiles-ansible_
+
 # My dotfiles to config Linux Ubuntu and Mac Os.
 The script will check if host Linux or Mac Os and setup it accordingly to my personal taste.
 It will install all my favorite apps and command interfaces (see `./install`). It will also config the host OS, config some apps and command interface. To finish it all off Ubuntu and multiple apps will get Dracula theme (see `./config`).
