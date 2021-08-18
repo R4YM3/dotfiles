@@ -1,5 +1,5 @@
 # Deprecated
-_This project replaced by https://github.com/R4YM3/dotfiles-ansible_
+_This project is replaced by https://github.com/R4YM3/dotfiles-ansible_
 
 # My dotfiles to config Linux Ubuntu and Mac Os.
 The script will check if host Linux or Mac Os and setup it accordingly to my personal taste.
